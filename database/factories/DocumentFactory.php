@@ -17,7 +17,11 @@ class DocumentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "identificacao" => fake()->unique()->numerify("DOC####"),
+            "responsavel" => fake()->name(),
+            "setores" => fake()->sentence(1),
+            "versao" => "v1.0",
+            "npaginas" => fake()->randomNumber(3),
         ];
     }
 }
