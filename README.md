@@ -3,6 +3,8 @@
 ## Sistema desenvolvido em:
 
 * [Laravel](https://laravel.com/)
+* [Sqlite](https://www.sqlite.org/)
+* [Filament](https://filamentphp.com/)
 
 > As versões dos pacotes usados pelo sistema estão nos arquivos [composer.json](composer.json)  e [package.json](package.json)
 
