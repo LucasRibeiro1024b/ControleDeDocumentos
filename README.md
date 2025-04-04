@@ -34,6 +34,7 @@ A instalação local desse sistema é bem simples, bastando apenas seguir os pas
 
 4. Gere a chave de segurança
     ```sh
+    cp .env.example .env
     php artisan key:generate
     ```
 
