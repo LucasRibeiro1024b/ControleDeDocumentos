@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
+use App\Models\People;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,9 +20,8 @@ class DocumentFactory extends Factory
     {
         return [
             "identificacao" => fake()->unique()->numerify("DOC####"),
-            "responsavel" => fake()->name(),
-            "setores" => fake()->sentence(1),
-            "versao" => "v1.0",
+            "responsavel" => People::pluck('id')->random(),
+            "versao" => fake()->numerify("v#.#"),
             "npaginas" => fake()->randomNumber(3),
         ];
     }

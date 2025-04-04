@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\People;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->id();
-            $table->string('identificacao');
-            
-            $table->unsignedBigInteger('responsavel');
-            $table->foreign('responsavel')->references('id')->on('people');
-
-            $table->string('versao');
-            $table->string('npaginas');
+            $table->string('nome')->unique();
             $table->timestamps();
         });
     }
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('people');
     }
 };

@@ -5,8 +5,10 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\DocumentResource\Pages;
 use App\Filament\Resources\DocumentResource\RelationManagers;
 use App\Models\Document;
+use App\Models\People;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -28,10 +30,27 @@ class DocumentResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->label('Identificação'),
-                Forms\Components\TextInput::make('responsavel')
-                    ->label('Responsável'),
-                Forms\Components\TextInput::make('setores')
-                    ->label('Setores'),
+                Forms\Components\Select::make('responsavel')
+                    ->label('Responsável')
+                    ->relationship(name: 'people', titleAttribute: 'nome')
+                    ->required()
+                    ->searchable()
+                    ->preload()
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('nome')
+                        ->required()
+                        ->maxLength(255),
+                    ]),
+                Forms\Components\Select::make('departments')
+                    ->label('Departamentos')
+                    ->relationship(titleAttribute:'titulo')
+                    ->preload()
+                    ->multiple()
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('title')
+                        ->required()
+                        ->maxLength(255)
+                    ]),
                 Forms\Components\TextInput::make('versao')
                     ->label('Versão'),
                 Forms\Components\TextInput::make('npaginas')
@@ -44,10 +63,11 @@ class DocumentResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('identificacao')
-                    ->label('Identificação'),
-                Tables\Columns\TextColumn::make('responsavel')
+                    ->label('Identificação')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('people.nome')
                     ->label('Responsável'),
-                Tables\Columns\TextColumn::make('setores')
+                Tables\Columns\TextColumn::make('departments.titulo')
                     ->label('Setores'),
                 Tables\Columns\TextColumn::make('versao')
                     ->label('Versão'),
@@ -70,7 +90,7 @@ class DocumentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            // RelationManagers\DepartmentsRelationManager::class,
         ];
     }
 
