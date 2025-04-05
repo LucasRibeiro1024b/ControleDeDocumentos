@@ -34,11 +34,3 @@ body:
       placeholder: Outros detalhes que podem ajudar a entender sua sugestão.
     validations:
       required: false
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Código de Conduta
-      description: Ao enviar esta sugestão, você concorda em seguir nosso [Código de Conduta](https://example.com).
-      options:
-        - label: Eu concordo em seguir o Código de Conduta deste projeto
-          required: true
