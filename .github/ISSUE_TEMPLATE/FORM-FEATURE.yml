@@ -22,7 +22,7 @@ body:
     id: problem-description
     attributes:
       label: Sua solicitação está relacionada a algum problema?
-      description: Descreva de forma clara e concisa qual problema você está enfrentando. Ex: "Fico frustrado quando..."
+      description: 'Descreva de forma clara e concisa qual problema você está enfrentando. Ex: "Fico frustrado quando..."'
       placeholder: Explique o problema que a funcionalidade resolveria.
     validations:
       required: false
