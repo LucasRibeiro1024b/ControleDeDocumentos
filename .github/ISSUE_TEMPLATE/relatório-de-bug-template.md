@@ -1,5 +1,5 @@
 ---
-name: Relatório de Bug
+name: Relatório de Bug Template
 about: Crie um relatório para nos ajudar a melhorar
 title: ''
 labels: ''
