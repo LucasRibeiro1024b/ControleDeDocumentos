@@ -1,6 +1,6 @@
 name: Requisição de Recurso
 description: Sugira uma nova funcionalidade ou melhoria.
-title: "[Recurso]: "
+title: '[Recurso]: '
 labels: ["feature", "triagem"]
 projects: ["octo-org/1", "octo-org/44"]
 assignees:
