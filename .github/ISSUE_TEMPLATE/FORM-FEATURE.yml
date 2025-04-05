@@ -19,14 +19,6 @@ body:
     validations:
       required: false
   - type: textarea
-    id: problem-description
-    attributes:
-      label: Sua solicitação está relacionada a algum problema?
-      description: 'Descreva de forma clara e concisa qual problema você está enfrentando. Ex: "Fico frustrado quando..."'
-      placeholder: Explique o problema que a funcionalidade resolveria.
-    validations:
-      required: false
-  - type: textarea
     id: proposed-solution
     attributes:
       label: Descreva a funcionalidade desejada
@@ -34,14 +26,6 @@ body:
       placeholder: Descreva sua ideia para a funcionalidade.
     validations:
       required: true
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternativas consideradas
-      description: Já pensou em outras maneiras de resolver esse problema?
-      placeholder: Liste aqui quaisquer soluções alternativas que você considerou.
-    validations:
-      required: false
   - type: textarea
     id: context
     attributes:
