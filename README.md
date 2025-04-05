@@ -53,7 +53,12 @@ A instalação local desse sistema é bem simples, bastando apenas seguir os pas
     php artisan serve
     ```
 
-8. Acesse o sistema em http://127.0.0.1:8000
+8. Para acessar o sistema
+
+    * Endereço: [http://localhost/](http://localhost/admin)
+    * Dados de acesso:
+      * Login: test@example.com
+      * Senha: password
 
 ## Documentação
 
