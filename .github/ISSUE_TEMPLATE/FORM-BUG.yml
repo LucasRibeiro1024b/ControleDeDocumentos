@@ -1,4 +1,4 @@
-name: Relatório de Bug
+name: Formulário de Bug
 description: Registre um relatório de bug.
 title: "[Bug]: "
 labels: ["bug", "triagem"]
