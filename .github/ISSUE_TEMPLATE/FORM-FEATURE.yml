@@ -1,0 +1,60 @@
+name: Requisição de Recurso
+description: Sugira uma nova funcionalidade ou melhoria.
+title: "[Recurso]: "
+labels: ["feature", "triagem"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por dedicar seu tempo para sugerir uma nova funcionalidade!
+  - type: input
+    id: contact
+    attributes:
+      label: Detalhes de Contato
+      description: Como podemos entrar em contato com você caso precisemos de mais informações?
+      placeholder: ex. email@exemplo.com
+    validations:
+      required: false
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Sua solicitação está relacionada a algum problema?
+      description: Descreva de forma clara e concisa qual problema você está enfrentando. Ex: "Fico frustrado quando..."
+      placeholder: Explique o problema que a funcionalidade resolveria.
+    validations:
+      required: false
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Descreva a funcionalidade desejada
+      description: Seja claro e conciso sobre o que você gostaria que acontecesse.
+      placeholder: Descreva sua ideia para a funcionalidade.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Já pensou em outras maneiras de resolver esse problema?
+      placeholder: Liste aqui quaisquer soluções alternativas que você considerou.
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
+      description: Adicione qualquer outra informação ou captura de tela relacionada à funcionalidade sugerida.
+      placeholder: Outros detalhes que podem ajudar a entender sua sugestão.
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Código de Conduta
+      description: Ao enviar esta sugestão, você concorda em seguir nosso [Código de Conduta](https://example.com).
+      options:
+        - label: Eu concordo em seguir o Código de Conduta deste projeto
+          required: true
