@@ -19,7 +19,7 @@ class DepartmentFactory extends Factory
     {
         return [
             "titulo" => fake()->word(),
-            "document_id" => Document::pluck('id')->random()
+            "document_id" => Document::inRandomOrder()->value('id')
         ];
     }
 }

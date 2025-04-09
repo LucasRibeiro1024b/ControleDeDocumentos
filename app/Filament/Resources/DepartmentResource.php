@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class DepartmentResource extends Resource
 {
-    protected static ?string $modelLabel = "Departamentos";
+    protected static ?string $modelLabel = "Setores";
 
     protected static ?string $model = Department::class;
 

@@ -17,14 +17,34 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create([
-            'name' => fake()->name(),
             'email' => 'test@example.com',
         ]);
 
         People::factory(5)->create();
-        
-        Document::factory(3)->create();
 
-        Department::factory(3)->create();
+        $documents = Document::factory(10)->create();
+
+        $departmentTitles = [
+            'Financeiro',
+            'Recursos Humanos',
+            'Tecnologia da Informação',
+            'Marketing',
+            'Comercial',
+            'Logística',
+            'Jurídico',
+            'Compras',
+            'Atendimento ao Cliente',
+            'Operações',
+        ];
+
+        $departments = collect();
+        foreach ($departmentTitles as $title) {
+            $departments->push(Department::create(['titulo' => $title]));
+        }
+
+        foreach ($documents as $document) {
+            $randomDepartments = $departments->random(rand(1, 3))->pluck('id')->toArray();
+            $document->departments()->attach($randomDepartments);
+        }
     }
 }

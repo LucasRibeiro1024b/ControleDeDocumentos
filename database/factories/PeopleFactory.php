@@ -17,7 +17,10 @@ class PeopleFactory extends Factory
     public function definition(): array
     {
         return [
-            "nome" => fake()->name(),
+            "nome" => collect(range(1, rand(2, 4)))
+            ->map(fn () => fake()->lastName())
+            ->prepend(fake()->firstName())
+            ->join(' '),
         ];
     }
 }
