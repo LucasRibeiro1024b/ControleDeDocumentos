@@ -47,7 +47,7 @@ class DocumentResource extends Resource
                     ->preload()
                     ->multiple()
                     ->createOptionForm([
-                        Forms\Components\TextInput::make('title')
+                        Forms\Components\TextInput::make('titulo')
                         ->required()
                         ->maxLength(255)
                     ]),
