@@ -23,6 +23,7 @@ class DocumentFactory extends Factory
             "responsavel" => People::pluck('id')->random(),
             "versao" => fake()->numerify("v#.#"),
             "npaginas" => fake()->randomNumber(3),
+            'created_at' => $this->faker->dateTimeBetween('first day of January', 'now'),
         ];
     }
 }
